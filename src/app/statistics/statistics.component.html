@@ -1,0 +1,22 @@
+<div class="statistics-cointaier">
+  <h1>Statistics</h1>
+
+  <div class="info">
+    <p class="sub-title">IMC Moyen</p>
+    <p class="text">{{ statistics?.averageImc }}</p>
+  </div>
+
+  <div class="info">
+    <p class="sub-title">Médiane des hauteurs</p>
+    <p class="text">{{ statistics?.heightsMedian }}</p>
+  </div>
+
+  <div class="info">
+    <p class="sub-title">Best pays</p>
+    <p class="text">
+      <img [src]="statistics?.winCountry?.picture" alt="Best country flag"/>
+      <br/>
+      <span>{{ statistics?.winCountry?.code }}</span>
+    </p>
+  </div>
+</div>

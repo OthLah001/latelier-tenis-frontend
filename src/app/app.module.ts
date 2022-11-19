@@ -9,6 +9,7 @@ import { FilterPlayersPipe } from './pipes/filter-players.pipe';
 import { PlayerComponent } from './player/player.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppComponent,
     PlayersComponent,
     FilterPlayersPipe,
-    PlayerComponent
+    PlayerComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

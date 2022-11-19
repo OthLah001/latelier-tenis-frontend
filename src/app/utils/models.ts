@@ -18,3 +18,12 @@ export interface IPlayer {
     last: number[];
   }
 };
+
+export interface IStatistics {
+  averageImc: number;
+  heightsMedian: number;
+  winCountry: {
+    code: string;
+    picture: string;
+  }
+}

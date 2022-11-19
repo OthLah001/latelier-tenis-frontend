@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { CustomHttpClientService } from './services/custom-http-client.service';
-import { IPlayer } from './utils/models';
+import { IPlayer, IStatistics } from './utils/models';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,21 @@ export class AppComponent implements OnInit {
   title = 'latelier-tenis-frontend';
 
   public players: IPlayer[] = [];
+  public statistics: IStatistics | null = null;
 
   constructor(
     private customHttp: CustomHttpClientService
   ) { }
 
   public ngOnInit(): void {
-    this.customHttp.get('/players').subscribe(
-      players => {
+    const playersObs = this.customHttp.get('/players');
+    const statisticsObs = this.customHttp.get('/statistics');
+
+    forkJoin([playersObs, statisticsObs]).subscribe(
+      ([players, statistics]) => {
         this.players = players;
+        this.statistics = statistics;
       }
-    )
+    );
   }
 }
