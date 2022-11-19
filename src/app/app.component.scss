@@ -1,0 +1,21 @@
+@import '../assets/styles/mixins.scss';
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 96px 0px 25px 0px;
+  background: url('../assets/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+app-players {
+  @include mobile {
+    width: 90%;
+  }
+}
