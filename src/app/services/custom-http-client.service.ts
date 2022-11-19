@@ -14,7 +14,7 @@ export class CustomHttpClientService {
   ) { }
 
   get(url: string, params = {}): Observable<any> {
-    return this.http.get(`${this.BASE_URL}${url}}`, { params }).pipe(
+    return this.http.get(`${this.BASE_URL}${url}`, { params }).pipe(
       catchError(err => {
         return throwError(err);
       })

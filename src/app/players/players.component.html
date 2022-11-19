@@ -1,0 +1,32 @@
+<div class="player-container">
+  <div class="search">
+    <input [(ngModel)]="filterStr" type="text" placeholder="Rechercher un joueur" />
+  </div>
+
+  <div class="players">
+    <div class="player" *ngFor="let player of (players | filterPlayers: filterStr)">
+      <div class="image">
+        <img [src]="player.picture" alt="Player image" />
+      </div>
+
+      <div class="info">
+        <h2 class="name">{{ player.firstname }} {{ player.lastname }}</h2>
+
+        <div class="details">
+          <p>
+            Rank<br/>
+            <span>#{{ player.data.rank }}</span>
+          </p>
+          <p>
+            Points<br/>
+            <span>#{{ player.data.points }}</span>
+          </p>
+          <p>
+            Country<br/>
+            <span>{{ player.country.code }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

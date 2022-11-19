@@ -1,0 +1,89 @@
+@import '../../assets/styles/mixins.scss';
+
+.player-container {
+  height: 100%;
+  width: 550px;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  .search {
+    width: calc(100% - 25px);
+    margin-bottom: 60px;
+
+    input {
+      background-color: var(--black);
+      border: none;
+      padding: 15px 0px 15px 25px;
+      border-radius: 15px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      width: 100%;
+      font-family: Mulish;
+    }
+  }
+}
+
+.player {
+  height: 160px;
+  width: 550px;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  box-shadow: 5px 5px 5px var(--black);
+
+  @include mobile {
+    width: 100%;
+  }
+
+  .image {
+    height: 160px;
+    width: 40%;
+    overflow: hidden;
+    position: relative;
+
+    @include mini-mobile {
+      display: none;
+    }
+
+    img {
+      height: 160px;
+      transform: scale(2.0);
+      position: absolute;
+      top: 50%;
+      left: 20%;
+    }
+  }
+
+  .info {
+    width: 50%;
+
+    @include mobile {
+      width: 80%;
+    }
+
+    .name {
+      @include title;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: row;
+
+      p {
+        @include sub-title;
+        margin-bottom: 0;
+        margin-right: 40px;
+
+        span {
+          @include text-sub;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
