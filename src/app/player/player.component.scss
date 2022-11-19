@@ -1,0 +1,169 @@
+@import '../../assets/styles/mixins.scss';
+
+.player-container {
+  .close-btn:after {
+    cursor: pointer;
+    display: block;
+    content: "\00d7";
+    font-size: 70px;
+    color: white;
+    text-align: center;
+  }
+}
+
+.details {
+  background: white;
+  min-height: 100%;
+  display: flex;
+
+  .big-image {
+    width: 20%;
+
+    @include mobile {
+      display: none;
+    }
+
+    img {
+      position: fixed;
+      height: 88vh;
+      left: -140px;
+    }
+  }
+
+  .main {
+    width: 100%;
+  
+    @include desktop {
+      width: 80%;
+    }
+  }
+}
+
+.header-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .name {
+    @include title;
+    font-size: 120px;
+    margin-top: 0;
+
+    @include mobile {
+      font-size: 70px;
+    }
+
+    .outline {
+      color: white;
+      text-shadow: 2px 2px 0 var(--orange), -2px 2px 0 var(--orange), 2px -2px 0 var(--orange), -2px -2px 0 var(--orange);
+    }
+  }
+
+  .country {
+    @include desktop {
+      padding: 40px;
+    }
+
+    img {
+      width: 135px;
+      height: 80px;
+
+      @include desktop {
+        width: 165px;
+        height: 110px;
+      }
+    }
+
+    p {
+      @include sub-title;
+      font-size: 60px;
+      margin: 0;
+      letter-spacing: 15px;
+
+      @include mobile {
+        font-size: 40px;
+        letter-spacing: 15px;
+      }
+    }
+  }
+}
+
+.info-career {
+  @include desktop {
+    display: flex;
+  }
+
+  .info {
+    @include desktop {
+      width: 75%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 80%;
+
+      @include desktop {
+        display: flex;
+      }
+    }
+
+    p {
+      @include sub-title;
+      font-size: 23px;
+      text-transform: uppercase;
+
+      @include desktop {
+        text-align: left;
+        width: calc(100% / 3);
+      }
+
+      @include mobile {
+        &:nth-of-type(even) {
+          text-align: right;
+        }
+      }
+
+      span {
+        @include text-sub;
+        font-size: 20px;
+        text-transform: none;
+      }
+    }
+  }
+
+  .career {
+    padding: 0 10% 0 10%;
+
+    @include desktop {
+      width: 25%;
+      padding: none;
+    }
+
+    .title {
+      @include sub-title;
+      font-size: 23px;
+      text-transform: uppercase;
+    }
+
+    .shampion {
+      @include text-sub;
+      
+      .header {
+        font-size: 18px;
+
+        .year {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

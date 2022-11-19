@@ -1,0 +1,79 @@
+<div class="player-container">
+  <div class="close-btn" (click)="dialogRef.close()"></div>
+
+  <div class="details">
+    <div class="big-image">
+      <img [src]="data.player.picture" alt="Player Pic" />
+    </div>
+
+    <div class="main">
+      <div class="header-name">
+        <h1 class="name">
+          <span class="outline">{{ data.player.firstname }}</span>
+          <br/>{{ data.player.lastname }}
+        </h1>
+
+        <div class="country">
+          <img [src]="data.player.country.picture" alt="Flag" />
+          <p>{{ data.player.country.code }}</p>
+        </div>
+      </div>
+
+      <div class="info-career">
+        <div class="info">
+          <div>
+            <p>
+              Rank<br/>
+              <span>#{{ data.player.data.rank }}</span>
+            </p>
+            <p>
+              Points<br/>
+              <span>{{ data.player.data.points }}</span>
+            </p>
+            <p>
+              Country<br/>
+              <span>{{ data.player.country.code }}</span>
+            </p>
+          </div>
+  
+          <div>
+            <p>
+              Birthday<br/>
+              <span>22/05/1987</span>
+            </p>
+            <p>
+              Age<br/>
+              <span>{{ data.player.data.age }}</span>
+            </p>
+          </div>
+  
+          <div>
+            <p>
+              Weight<br/>
+              <span>{{ data.player.data.weight/1000 }} kg</span>
+            </p>
+            <p>
+              Height<br/>
+              <span>{{ data.player.data.height }} cm</span>
+            </p>
+          </div>
+        </div>
+  
+        <div class="career">
+          <p class="title">Career titles</p>
+
+          <p *ngFor="let i of [1, 2, 3, 4, 5]" class="shampion">
+            <span class="header">
+              <span class="year">2021</span> - 5
+            </span>
+            <br/>
+            APT Masters 100 Paris (Indoor/Hard)<br>
+            Wimbledon (Outdoor/Grass)<br>
+            Roland Garros (Outdoor/Clay)
+            Belgrade 2 (Outdoor/Clay)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

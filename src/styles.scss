@@ -10,3 +10,13 @@ body {
   --orange-light: #EBAD65;
   --black: #00000030;
 }
+
+
+.player-dialog {
+  max-width: 95vw !important;
+
+  mat-dialog-container {
+    background: none;
+    box-shadow: none;
+  }
+}

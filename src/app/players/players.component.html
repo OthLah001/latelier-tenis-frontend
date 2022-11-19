@@ -4,7 +4,7 @@
   </div>
 
   <div class="players">
-    <div class="player" *ngFor="let player of (players | filterPlayers: filterStr)">
+    <div class="player" *ngFor="let player of (players | filterPlayers: filterStr)" (click)="onShowPlayer(player.id)">
       <div class="image">
         <img [src]="player.picture" alt="Player image" />
       </div>
@@ -19,7 +19,7 @@
           </p>
           <p>
             Points<br/>
-            <span>#{{ player.data.points }}</span>
+            <span>{{ player.data.points }}</span>
           </p>
           <p>
             Country<br/>
