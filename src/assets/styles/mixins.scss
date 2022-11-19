@@ -1,0 +1,38 @@
+@mixin title {
+  color: var(--orange);
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+@mixin sub-title {
+  color: var(--black);
+  font-family: Mulish;
+  font-weight: 600;
+}
+
+@mixin text-sub {
+  color: var(--orange);
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+// Responsive mixin
+$break-point: 961px;
+
+@mixin desktop {
+  @media (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: ($break-point - 1px)) {
+    @content;
+  }
+}
+
+@mixin mini-mobile {
+  @media (max-width: 520px) {
+    @content;
+  }
+}
