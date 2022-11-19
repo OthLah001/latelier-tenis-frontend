@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   public players: IPlayer[] = [];
   public statistics: IStatistics | null = null;
+  public fetchingData: boolean = true;
 
   constructor(
     private customHttp: CustomHttpClientService
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
       ([players, statistics]) => {
         this.players = players;
         this.statistics = statistics;
+        this.fetchingData = false;
       }
     );
   }

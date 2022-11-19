@@ -1,4 +1,10 @@
 <div class="app-container">
-  <app-players [players]="players"></app-players>
-  <app-statistics [statistics]="statistics"></app-statistics>
+  <div class="spinner-container" *ngIf="fetchingData">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-container *ngIf="!fetchingData">
+    <app-players [players]="players"></app-players>
+    <app-statistics [statistics]="statistics"></app-statistics>
+  </ng-container>
 </div>
